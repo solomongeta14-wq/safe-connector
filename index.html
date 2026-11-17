@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Connect Safely - a privacy-first matchmaking and connection platform"
+    />
+    <title>Connect Safely</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-shell">
+        <div class="brand-wrap">
+          <div class="brand-mark">C</div>
+          <div>
+            <div class="brand-name">Connect Safely</div>
+            <div class="brand-tag">Private matches, real consent</div>
+          </div>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-target="home">Home</button>
+          <button class="nav-link" data-target="auth">Register</button>
+          <button class="nav-link" data-target="app">Members</button>
+        </nav>
+        <div class="nav-actions">
+          <button id="logoutButton" class="btn btn-light hidden">Log out</button>
+          <button id="loginCta" class="btn btn-primary">Join now</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <div class="hero container">
+          <div class="hero-copy">
+            <div class="eyebrow">A thoughtful, adults-only community</div>
+            <h1>Meet with confidence. Protect your privacy.</h1>
+            <p>
+              Connect Safely helps adults discover compatible matches while
+              keeping personal details private until both people are ready to share.
+            </p>
+            <div class="cta-row">
+              <button class="btn btn-primary" data-target="auth">Create account</button>
+              <button class="btn btn-secondary" data-target="app">Browse profiles</button>
+            </div>
+            <ul class="mini-trust">
+              <li>18+ member registration</li>
+              <li>Consent-based contact sharing</li>
+              <li>Private messaging only after match</li>
+            </ul>
+          </div>
+          <div class="hero-card">
+            <div class="profile-card card-glass">
+              <div class="profile-header">
+                <div class="avatar large avatar-one">A</div>
+                <div>
+                  <strong>Alicia</strong>
+                  <span>Member • London</span>
+                </div>
+              </div>
+              <div class="badge-row">
+                <span class="tag tag-success">Mutual like</span>
+                <span class="tag tag-neutral">Travel</span>
+              </div>
+              <div class="mini-stats">
+                <div>
+                  <strong>98%</strong>
+                  <span>profile trust</span>
+                </div>
+                <div>
+                  <strong>4.9</strong>
+                  <span>member satisfaction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container section-block">
+          <div class="section-title-wrap">
+            <div class="eyebrow">Built for safety</div>
+            <h2>Security-first features at every step</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="info-card">
+              <div class="icon">🔒</div>
+              <h3>Private by default</h3>
+              <p>No phone or email is shared until both users explicitly consent.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">🛡️</div>
+              <h3>Safety tools</h3>
+              <p>Reporting and audit logs help members flag unwanted behavior for review.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">✅</div>
+              <h3>Mutual-interest matching</h3>
+              <p>Only mutual likes create a match, ensuring each connection begins with consent.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">📧</div>
+              <h3>Secure communications</h3>
+              <p>Messages remain inside the platform until both parties approve a contact exchange.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="auth" class="page">
+        <div class="container auth-grid">
+          <div class="panel auth-panel">
+            <div class="eyebrow">Create an account</div>
+            <h2>Join Connect Safely</h2>
+            <form id="registrationForm" novalidate>
+              <div class="form-row two-col">
+                <label>
+                  Full name
+                  <input type="text" name="name" placeholder="Solomon Lee" required />
+                </label>
+                <label>
+                  Display name
+                  <input type="text" name="displayName" placeholder="Solo" required />
+                </label>
+              </div>
+              <div class="form-row two-col">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  Phone (optional)
+                  <input type="tel" name="phone" placeholder="+1 555 123 4567" />
+                </label>
+              </div>
+              <div class="form-row two-col">
+                <label>
+                  Gender
+                  <select name="gender" required>
+                    <option value="">Choose</option>
+                    <option value="man">Man</option>
+                    <option value="woman">Woman</option>
+                    <option value="nonbinary">Non-binary</option>
+                  </select>
+                </label>
+                <label>
+                  Date of birth
+                  <input type="date" name="dob" required />
+                </label>
+              </div>
+              <label>
+                Password
+                <input type="password" name="password" placeholder="At least 10 characters" minlength="10" maxlength="128" required />
+              </label>
+              <div class="form-row two-col">
+                <label>
+                  Country
+                  <input type="text" name="country" placeholder="United States" />
+                </label>
+                <label>
+                  City
+                  <input type="text" name="city" placeholder="Seattle" />
+                </label>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" name="terms" required />
+                <span>I agree to the Terms & Privacy Policy and confirm I am 18+.</span>
+              </label>
+              <button type="submit" class="btn btn-primary btn-block">Create account</button>
+            </form>
+          </div>
+
+          <div class="panel auth-panel">
+            <div class="eyebrow">Welcome back</div>
+            <h2>Sign in securely</h2>
+            <form id="loginForm" novalidate>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="password" placeholder="••••••••" required />
+              </label>
+              <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </form>
+            <div class="inline-actions">
+              <button type="button" id="forgotPasswordToggle" class="btn btn-link">Forgot password?</button>
+            </div>
+            <div id="passwordResetPanel" class="reset-panel hidden">
+              <form id="forgotPasswordForm" class="reset-form" novalidate>
+                <label>
+                  Account email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <button type="submit" class="btn btn-secondary btn-block">Send reset token</button>
+              </form>
+              <form id="resetPasswordForm" class="reset-form" novalidate>
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="you@example.com" required />
+                </label>
+                <label>
+                  Reset token
+                  <input type="text" name="token" placeholder="Paste the token from your reset email" required />
+                </label>
+                <label>
+                  New password
+                  <input type="password" name="password" placeholder="At least 10 characters" minlength="10" maxlength="128" required />
+                </label>
+                <button type="submit" class="btn btn-primary btn-block">Reset password</button>
+              </form>
+            </div>
+            <div class="security-box">
+              <strong>Security quick facts</strong>
+              <ul>
+                <li>Server-side PBKDF2 password hashing</li>
+                <li>Rate limits on registration and login</li>
+                <li>HTTP-only, SameSite session cookies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="app" class="page">
+        <div class="container app-shell">
+          <aside class="sidebar">
+            <div class="profile-mini panel">
+              <div class="eyebrow">My profile</div>
+              <div id="profileSummary" class="profile-summary"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Notifications</h3>
+                <span id="notificationCount" class="pill"></span>
+              </div>
+              <div id="notificationList" class="stack-list"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Matches</h3>
+              </div>
+              <div id="matchList" class="stack-list"></div>
+            </div>
+          </aside>
+
+          <div class="workspace">
+            <section class="panel section-panel" id="profileSection">
+              <div class="panel-head">
+                <h3>Profile setup</h3>
+                <button id="saveProfileBtn" class="btn btn-primary small-btn">Save profile</button>
+              </div>
+              <form id="profileForm" class="profile-form">
+                <div class="form-row two-col">
+                  <label>
+                    Display name
+                    <input type="text" name="displayName" />
+                  </label>
+                  <label>
+                    Relationship intention
+                    <select name="relationshipIntent">
+                      <option value="Long-term relationship">Long-term relationship</option>
+                      <option value="Casual dating">Casual dating</option>
+                      <option value="Friends first">Friends first</option>
+                      <option value="Marriage minded">Marriage minded</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form-row two-col">
+                  <label>
+                    Country
+                    <input type="text" name="country" />
+                  </label>
+                  <label>
+                    City
+                    <input type="text" name="city" />
+                  </label>
+                </div>
+                <div class="form-row two-col">
+                  <label>
+                    Occupation
+                    <input type="text" name="occupation" />
+                  </label>
+                  <label>
+                    Education
+                    <input type="text" name="education" />
+                  </label>
+                </div>
+                <label>
+                  About me
+                  <textarea name="aboutMe" rows="4"></textarea>
+                </label>
+                <div class="form-row two-col">
+                  <label>
+                    Interests
+                    <input type="text" name="interests" placeholder="Hiking, travel, cooking" />
+                  </label>
+                  <label>
+                    Languages
+                    <input type="text" name="languages" placeholder="English, Spanish" />
+                  </label>
+                </div>
+                <div class="form-row two-col">
+                  <label>
+                    Preferred age range
+                    <input type="text" name="ageRange" placeholder="25-35" />
+                  </label>
+                  <label>
+                    Preferred location
+                    <input type="text" name="preferredLocation" placeholder="Within 50 miles" />
+                  </label>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel section-panel" id="discoverSection">
+              <div class="panel-head">
+                <h3>Discover people</h3>
+              </div>
+              <div class="filter-bar">
+                <input id="searchInput" type="text" placeholder="Search by display name" />
+                <select id="genderFilter">
+                  <option value="all">All genders</option>
+                  <option value="man">Men</option>
+                  <option value="woman">Women</option>
+                  <option value="nonbinary">Non-binary</option>
+                </select>
+                <select id="countryFilter">
+                  <option value="all">All countries</option>
+                </select>
+              </div>
+              <div id="discoverList" class="discover-list"></div>
+            </section>
+
+            <section class="panel section-panel" id="messagesSection">
+              <div class="panel-head">
+                <h3>Private conversations</h3>
+              </div>
+              <div class="chat-layout">
+                <div id="conversationList" class="conversation-list"></div>
+                <div class="chat-panel">
+                  <div id="chatHeader" class="chat-header"></div>
+                  <div id="chatMessages" class="chat-messages"></div>
+                  <form id="messageForm" class="message-form">
+                    <input type="text" name="message" placeholder="Type a message..." required />
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </form>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel section-panel hidden" id="adminSection">
+              <div class="panel-head">
+                <h3>Admin dashboard</h3>
+              </div>
+              <div class="admin-grid">
+                <div class="metric-card"><strong id="adminUserCount">—</strong><span>Member accounts</span></div>
+                <div class="metric-card"><strong id="adminMatchCount">—</strong><span>Mutual matches</span></div>
+                <div class="metric-card"><strong id="adminReportCount">—</strong><span>Open reports</span></div>
+                <div class="metric-card"><strong>Local</strong><span>Development server</span></div>
+              </div>
+              <div id="adminReports" class="report-table"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Connect Safely</strong>
+          <p>Consent-based connections with privacy and safety at the center.</p>
+        </div>
+        <div class="footer-links">
+          <span>Privacy by design</span>
+          <span>Trust & safety</span>
+          <span>Secure messaging</span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toastRegion" class="toast-region" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
