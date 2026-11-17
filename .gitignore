@@ -1,0 +1,16 @@
+data/
+
+# Local secrets and credentials
+.env
+.env.*
+*.env
+*.pem
+*.key
+secrets.*
+credentials.*
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
